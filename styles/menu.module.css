@@ -1,0 +1,18 @@
+.nav {
+    background-color: rgb(138, 180, 59);
+    padding: 0 25px;
+    margin-bottom:50px;
+}
+
+.nav li {
+    display: inline;
+    list-style: none;
+}
+
+.nav li a {
+    color: #fff;
+    margin-right:45px;
+    display: inline-block;
+    padding:20px 0;
+    text-decoration: none;
+}
