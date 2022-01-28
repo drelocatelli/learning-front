@@ -1,18 +1,18 @@
 import ReduxMenu from "../Components/redux-menu";
 import { connect } from 'react-redux';
-import { alterarNome } from '../store/storeConfig';
 import { useState } from "react";
+import {alterarNome} from '../store/actions/nomeAction';
 
 function Page(props) {
 
-    const [name, setName] = useState('');
-    
     const { setNome } = props;
+
+    console.log(props)
 
     function submitForm(e) {
         e.preventDefault()
 
-        setNome(alterarNome, name);
+        setNome(alterarNome, e.target.name.value);
     }
 
     return (
@@ -20,7 +20,7 @@ function Page(props) {
             <h1>Redux Forms</h1>
             <ReduxMenu />
             <form onSubmit={submitForm}>
-                <input type="text" placeholder="Your name" name='name' onChange={e => setName(e.target.value)} />
+                <input type="text" placeholder="Your name" name='name' />
                 &nbsp;
                 <button type="submit">Save</button>
             </form>
@@ -30,7 +30,8 @@ function Page(props) {
 
 function mapStateToProps(state) {
     return {
-        name: state.name
+        nome: state.nomes.nome,
+        numeros: state.numeros
     }
 }
 

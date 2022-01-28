@@ -1,10 +1,8 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { alterarNome } from '../store/storeConfig';
 
 function Page(props) {
 
-  const {name} = props;
+  const {nome} = props;
 
   console.log(props)
   
@@ -13,7 +11,7 @@ function Page(props) {
       Home page 
 
       <br /><br />
-      Hello, {name}
+      Hello, {nome}
     </>
   )
 }
@@ -21,9 +19,8 @@ function Page(props) {
 
 function mapStateToProps(state) {
   return {
-      name: state.name,
-      min: state.min,
-      max: state.max
+      nome: state.nomes.nome,
+      numeros: state.numeros
   }
 }
 

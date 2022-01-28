@@ -1,16 +1,18 @@
 import {connect} from 'react-redux';
-import {alterarNumeroMinimo, alterarNumeroMaximo} from '../store/storeConfig';
 import ReduxMenu from '../Components/redux-menu';
+import { alterarNumeroMaximo, alterarNumeroMinimo } from '../store/actions/numerosAction';
 
 function Page(props) {
 
-    const {numeros} = props;
+    // const {numeros} = props;
+
+    console.log(props)
 
     return(
         <>
             <h1>Learning redux</h1>
             <ReduxMenu />
-            <div>
+            {/* <div>
                 Intervalo de numeros: <br /><br />
                 Min: <input type="text" value={numeros.min} onChange={e => props.alterarNumero(alterarNumeroMinimo, e.target.value)} />
                 &nbsp;&nbsp;
@@ -19,13 +21,14 @@ function Page(props) {
                 Média dos números: {(numeros.max + numeros.min / 2)}
                 <br /><br />
                 Soma dos números: {(Number(numeros.max) + Number(numeros.min))}
-            </div>
+            </div> */}
         </>
     );
 }
 
 function mapStateToProps(state) {
     return {
+        nomes: state.nomes.nome,
         numeros: state.numeros
     }
 }
