@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {alterarNumeroMinimo, alterarNumeroMaximo} from '../store/actions/numeros';
+import {alterarNumeroMinimo, alterarNumeroMaximo} from '../store/storeConfig';
 
 function Page(props) {
 
