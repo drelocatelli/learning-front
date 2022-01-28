@@ -12,16 +12,16 @@ function Page(props) {
         <>
             <h1>Learning redux</h1>
             <ReduxMenu />
-            {/* <div>
+            <div>
                 Intervalo de numeros: <br /><br />
-                Min: <input type="text" value={numeros.min} onChange={e => props.alterarNumero(alterarNumeroMinimo, e.target.value)} />
+                Min: <input type="text" value={props.numeros.min} onChange={e => props.alterarNumero(alterarNumeroMinimo, e.target.value)} />
                 &nbsp;&nbsp;
-                Max: <input type="text" value={numeros.max} onChange={e => props.alterarNumero(alterarNumeroMaximo, e.target.value)} />
+                Max: <input type="text" value={props.numeros.max} onChange={e => props.alterarNumero(alterarNumeroMaximo, e.target.value)} />
                 <br /><br />
-                Média dos números: {(numeros.max + numeros.min / 2)}
+                Média dos números: {(props.numeros.max + props.numeros.min / 2)}
                 <br /><br />
-                Soma dos números: {(Number(numeros.max) + Number(numeros.min))}
-            </div> */}
+                Soma dos números: {(Number(props.numeros.max) + Number(props.numeros.min))}
+            </div>
         </>
     );
 }
