@@ -2,6 +2,7 @@ import {createStore, combineReducers} from 'redux';
 
 const reducers = combineReducers({
     numeros: (state, action) => {
+        console.log(state)
         switch(action.type) {
             case 'NUM_MIN_ALTERADO':
                 return {
@@ -13,10 +14,16 @@ const reducers = combineReducers({
                     ...state,
                     max: action.payload
                 }
+            case 'NOME_ALTERADO':
+                return{
+                    ...state,
+                    name: action.payload
+                }
             default:
                 return {
                     min: 1,
-                    max: 10
+                    max: 10,
+                    name: ''
                 }
         }
 
@@ -37,6 +44,13 @@ export function alterarNumeroMaximo(novoNumero) {
     return{
         type: 'NUM_MAX_ALTERADO',
         payload: novoNumero
+    }
+}
+
+export function alterarNome(novoNome) {
+    return{
+        type: 'NOME_ALTERADO',
+        payload: novoNome
     }
 }
 

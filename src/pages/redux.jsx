@@ -1,5 +1,6 @@
 import {connect} from 'react-redux';
 import {alterarNumeroMinimo, alterarNumeroMaximo} from '../store/storeConfig';
+import ReduxMenu from '../Components/redux-menu';
 
 function Page(props) {
 
@@ -8,6 +9,7 @@ function Page(props) {
     return(
         <>
             <h1>Learning redux</h1>
+            <ReduxMenu />
             <div>
                 Intervalo de numeros: <br /><br />
                 Min: <input type="text" value={numeros.min} onChange={e => props.alterarNumero(alterarNumeroMinimo, e.target.value)} />
