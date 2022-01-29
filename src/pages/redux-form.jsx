@@ -1,6 +1,6 @@
 import ReduxMenu from "../Components/redux-menu";
 import { useDispatch, useSelector } from 'react-redux';
-import {changeNome} from '../store/actions/nomeAction';
+import {changeNome} from '../store/nome/nomeAction';
 
 export default function Page() {
 

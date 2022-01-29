@@ -1,10 +1,8 @@
 import {connect} from 'react-redux';
 import ReduxMenu from '../Components/redux-menu';
-import { alterarNumeroMaximo, alterarNumeroMinimo } from '../store/actions/numerosAction';
+import { alterarNumeroMaximo, alterarNumeroMinimo } from '../store/numeros/numerosAction';
 
 function Page(props) {
-
-    // const {numeros} = props;
 
     console.log(props)
 

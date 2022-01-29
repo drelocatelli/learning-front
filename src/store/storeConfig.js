@@ -1,12 +1,13 @@
+import { configureStore } from '@reduxjs/toolkit';
 import {createStore, combineReducers, compose, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
-import nomesReducers from './reducers/nomesReducers';
-import numerosReducers from './reducers/numerosReducers';
+import nomesReducers from './nome/nomesReducers';
+import numerosReducers from './numeros/numerosReducers';
 
-const reducers = combineReducers({
-    numeros: numerosReducers,
-    nomes: nomesReducers
-});
+// const reducers = combineReducers({
+//     numeros: numerosReducers,
+//     nomes: nomesReducers
+// });
 
 // ----------------------- dev tools
 
@@ -31,9 +32,15 @@ const useDevTools = logger;
 // ----------------------- dev tools
 
 
-const storeConfig = () => createStore(
-    reducers, 
-    composeEnhancers(applyMiddleware(thunk, useDevTools))
-);
+// const storeConfig = () => createStore(
+//     reducers, 
+//     composeEnhancers(applyMiddleware(thunk, useDevTools))
+// );
 
-export default storeConfig;
+// export default storeConfig;
+export const store = configureStore({
+  reducer: {
+    numeros: numerosReducers,
+    nomes: nomesReducers
+  }
+});

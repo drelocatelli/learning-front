@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { changeNome } from "../actions/nomeAction";
+import { changeNome } from "./nomeAction";
 
 const INITIAL_STATE = {
     nome: ''

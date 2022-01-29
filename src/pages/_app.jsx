@@ -3,9 +3,7 @@ import '../../styles/globals.css';
 import Menu from "../Components/Menu";
 
 import {Provider} from 'react-redux';
-import configStore from '../store/storeConfig';
-
-const store = configStore();
+import { store } from '../store/storeConfig';
 
 function MyApp({ Component, pageProps }) {
   return(
