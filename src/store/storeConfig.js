@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import {createStore, combineReducers, compose, applyMiddleware} from 'redux';
-import thunk from 'redux-thunk';
 import nomesReducers from './nome/nomesReducers';
 import numerosReducers from './numeros/numerosReducers';
+import pokemonsReducers from './pokemons/pokemonsReducers';
 
 export const store = configureStore({
   reducer: {
     numeros: numerosReducers,
-    nomes: nomesReducers
+    nomes: nomesReducers,
+    pokemons: pokemonsReducers
   }
 });

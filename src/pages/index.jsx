@@ -6,6 +6,12 @@ export default function Page() {
     return state.nomes
   })
 
+  const {pokemons} = useSelector(state => {
+    return state.pokemons
+  })
+
+  console.log(pokemons)
+
   return (
     <>
       Home page 
