@@ -10,7 +10,7 @@ function Page(props) {
 
     return(
         <>
-            <h1>Learning redux</h1>
+            <h1>Redux Counter</h1>
             <ReduxMenu />
             <div>
                 Intervalo de numeros: <br /><br />

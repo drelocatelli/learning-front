@@ -12,6 +12,10 @@ export default function ReduxMenu() {
                 <Link href='/redux-form'>
                     <TagLink>Forms</TagLink>
                 </Link>
+                &nbsp;&nbsp;&nbsp;
+                <Link href='/redux-fetch'>
+                    <TagLink>Fetch</TagLink>
+                </Link>
             </div>
         </>
     );

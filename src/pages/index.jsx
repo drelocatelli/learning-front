@@ -1,11 +1,11 @@
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 
-function Page(props) {
+export default function Page() {
 
-  const {nome} = props;
+  const {nome} = useSelector(state => {
+    return state.nomes
+  })
 
-  console.log(props)
-  
   return (
     <>
       Home page 
@@ -17,24 +17,3 @@ function Page(props) {
 }
 
 
-function mapStateToProps(state) {
-  return {
-      nome: state.nomes.nome,
-      numeros: state.numeros
-  }
-}
-
-function mapDispatchToProp(dispatch) {
-  return {
-      setNome(callback, novoNome) {
-          // action creator -> action
-          const action = callback(novoNome);
-          dispatch(action);
-      }
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProp
-)(Page);

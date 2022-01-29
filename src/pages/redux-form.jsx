@@ -1,18 +1,19 @@
 import ReduxMenu from "../Components/redux-menu";
-import { connect } from 'react-redux';
-import { useState } from "react";
-import {alterarNome} from '../store/actions/nomeAction';
+import { useDispatch, useSelector } from 'react-redux';
+import {changeNome} from '../store/actions/nomeAction';
 
-function Page(props) {
+export default function Page() {
 
-    const { setNome } = props;
+    const {nome} = useSelector(state => {
+        return state.nomes
+    })
 
-    console.log(props)
+    const dispatch  = useDispatch();
 
     function submitForm(e) {
         e.preventDefault()
-
-        setNome(alterarNome, e.target.name.value);
+        
+        dispatch(changeNome(e.target.name.value));
     }
 
     return (
@@ -24,28 +25,9 @@ function Page(props) {
                 &nbsp;
                 <button type="submit">Save</button>
             </form>
+
+            <br />
+            {nome}
         </>
     );
 }
-
-function mapStateToProps(state) {
-    return {
-        nome: state.nomes.nome,
-        numeros: state.numeros
-    }
-}
-
-function mapDispatchToProp(dispatch) {
-    return {
-        setNome(callback, novoNome) {
-            // action creator -> action
-            const action = callback(novoNome);
-            dispatch(action);
-        }
-    }
-}
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProp
-)(Page);

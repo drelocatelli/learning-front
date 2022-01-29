@@ -1,6 +1,4 @@
-export function alterarNome(novoNome) {
-    return{
-        type: 'NOME_ALTERADO',
-        payload: novoNome
-    }
-}
+import { createAction } from "@reduxjs/toolkit";
+
+export const changeNome = createAction('NOME_ALTERADO');
+
